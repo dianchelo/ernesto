@@ -11,9 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('ernesto');
-});
+// Route::get('/', function () {
+//     return view('ernesto');
+// });
 
+Route::get('/', ['as' => 'pages.ernesto', 'uses' => 'PagesController@getErnesto']);
 
-Route::get('example', ['as' => 'pages.example', 'uses' => 'PagesController@getExample']);
+Route::resource('groups',  'GroupController');
+Route::resource('items',  'ItemController');
